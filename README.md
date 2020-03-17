@@ -1,6 +1,6 @@
 <img src="./images/VisualRecognition.png" width="20%"/>
 
-Node-RED Challenge - Watson Visual Recognition - Pizza App
+# Node-RED Challenge - Watson Visual Recognition - Pizza App
 
 Watson Visual Recognition understands an image’s content out-of-the-box. The pre-trained models enable you to analyze images for objects, faces, colors, food, explicit content and other subjects for insights into your visual content.
 
@@ -9,32 +9,37 @@ Watson can also learn any new object, person, or attribute.
 With only a few images, the computer vision service can learn any new object, person, or attribute such as identifying car type and damage to estimate repair costs. Train models effortlessly with Watson Studio — a free workspace where you can seamlessly create, evaluate, and manage your custom models.
 
 
-In this lab, you go through a step-by-step process to use Watson Visual Recognition out-of-the-box and then you will create your own custom model using the integrated tooling available on IBM Cloud.
+In this exercise, you will go through a step-by-step process to use Watson Visual Recognition out-of-the-box and then you will create your own custom model using the integrated tooling available on IBM Cloud.
 
 
-# Objective
+## Objective
 
 In the following lab, you will learn:
 
-
 + How to use the Watson Visual Recognition API
 + How to use the Watson Studio tools to create your own custom model
-+ Integrate the service in a web app
++ How to integrate the visual recognition technology in a web app application
 
 
-# Pre-Requisites
+## Pre-Requisites
 
 + Get an [IBM Cloud Platform account in the US region](https://cllebrun.github.io/labs/0_Registration/), or use an existing account.
 
 
-# Steps
+## Scenario
+
+A Pizza Fast Food wants to provide to their customers a unique and specific online service.
+As a developer, you are asked to create a "pizza checker app" so when the customer receives a pizza delivered at home and if while opening the pizza box he is not satisfied by the pizza condition, he can use this app in order to assess the problem using a visual recognition technology and report the problem to the Pizza Fast Food.
+In order to do that you will need to create a Visual Recognition service. Then you will create and train a custom visual recognition model to recognise bad/good condition pizzas. You will create a web application with a front end that will call the visual recognition service when the user upload a picture and that will store the result in a database.
+
+## Steps
 
 1. Using Visual Recognition pre-trained models with the UI
 2. Creating a custom classifier with the UI
-3. Creating an object detection model
-4. Integrate Visual Recognition in your application with Node-Red
+3. Creating a Node-RED application
+4. Integrate Visual Recognition and Cloudant DB in your Node-RED application
 
-# Step 1 - Using Visual Recognition pre-trained models with the UI
+### Step 1 - Using Visual Recognition pre-trained models with the UI
 
 The first part of this lab will show you how to create a Visual Recognition Service, and use its tooling to test Watson provided models.
 
@@ -96,7 +101,7 @@ Yet still, these millions of photos are a drop in the bucket compared to how man
 
 Therefore, let's examine how easy it is to teach Watson something that consumer oriented AI doesn't do.
 
-# Step 2 - Creating a custom classifier with the UI
+### Step 2 - Creating a custom classifier with the UI
 
 Objectives : Teaching Watson New Tricks
 
@@ -138,7 +143,7 @@ Now that Watson has been trained on your specific images, let's test it out usin
 
     <img src="./images/images-test-custom.png"/>
 
-# Step 3 - Creating an object detection model
+### Step 3 - Creating an object detection model
 
 Up until now, clients have been using Watson to understand the contents of their images by training Watson with tagged images. For instance, detecting whether a car does or does not have damage.
 
@@ -182,7 +187,7 @@ At this point, you may have more images to label to improve your model’s accur
 
 Get started with Custom Object Detection to enhance your existing applications to more efficiently and effectively analyze visual content to drive productivity inside your organization.
 
-# Step 4 - Integrate Visual Recognition in your application with Node-Red
+### Step 4 - Integrate Visual Recognition in your application with Node-Red
 
 **Introduction**
 
