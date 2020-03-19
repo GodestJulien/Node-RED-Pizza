@@ -2,6 +2,9 @@
 
 # Node-RED Challenge - Watson Visual Recognition - Pizza App
 
+This exercise is divided in 4 steps, please note that Step 1&2 are independent than Steps 3&4 but an integration is needed at the end.
+
+## A few words about Watson Visual Recognition technology
 Watson Visual Recognition understands an image’s content out-of-the-box. The pre-trained models enable you to analyze images for objects, faces, colors, food, explicit content and other subjects for insights into your visual content.
 
 Watson can also learn any new object, person, or attribute.
@@ -12,7 +15,7 @@ With only a few images, the computer vision service can learn any new object, pe
 In this exercise, you will go through a step-by-step process to use Watson Visual Recognition out-of-the-box and then you will create your own custom model using the integrated tooling available on IBM Cloud.
 
 
-## Objective
+## Objective of the exercise
 
 In the following lab, you will learn:
 
@@ -34,7 +37,7 @@ In order to do that you will need to create a Visual Recognition service. Then y
 
 Your finale objective is to create a web application with a front end that will call your custom visual recognition model when the user upload a picture and that will display the result and store it in a database.
 
-What we expect from you to realize:
+What we expect from you to achieve today:
 
  <img src="./images/architecture.png"/>
 
@@ -43,7 +46,7 @@ What we expect from you to realize:
 1. Testing Visual Recognition pre-trained models with the UI
 2. Creating a Visual Recognition custom classifier
 3. Creating a Node-RED application
-4. Integrate Visual Recognition and Cloudant DB in your Node-RED application
+4. Building your app using Visual Recognition and Cloudant DB with Node-RED
 
 ### Step 1 - Testing Visual Recognition pre-trained models with the UI
 
@@ -111,7 +114,7 @@ Therefore, let's examine how easy it is to teach Watson something that consumer 
 
 ### Step 2 - Creating a Visual Recognition custom classifier
 
-Objectives : Teaching Watson New Tricks
+Objective : Teaching Watson New Tricks
 
 The Visual Recognition service is trained by providing example images for each classification bucket -- the more examples you provide, the better the accuracy. After Watson has trained itself on your images, then it will classify a new image that it has never seen before and calculate how confident it is that it belongs to one of your classification types.
 
@@ -157,35 +160,67 @@ Node-RED is a visual tool for wiring the Internet of Things. It is easy to conne
 
 A cloud version of Node-RED is a available on IBM Cloud but you can also deploy it as a stand alone Node.js application. Node-RED can not only be used for IoT applications, but it is a generic event-processing engine. For example, you can use it to listen to events from http, websockets, tcp, Twitter (and more!) and store this data in databases without having to program much, if at all. You can also use it to implement simple REST APIs. You can find many other sample flows on the Node-RED website.
 
-1. Back on n your IBM Cloud console, click Catalog in the menu bar on top
+1. Back on your IBM Cloud console, click Catalog in the menu bar on top
 
-1. Select the Software tab, an look for **Node-RED st
+1. Select the Software tab, an look for **Node-RED App**
 
-### Step 4 - Integrate Visual Recognition and Cloudant DB in your Node-RED application
+1. Select it and click on **Create App** (up and right)
+It will create an instance of a Node-RED app (Node.js) and a Cloudant database.
 
-**Introduction**
+1. Give a name to your app and for the Cloudant Database, select the **Dallas** region and **Lite** plan.
+
+  <img src="./images/nodered-creation.png"/>
+
+1. Clik Create. Now wait for few moments. You will know your app is created when you see the message on top right saying: “Success!...” This message will be there just for few seconds, then it will disappear
+
+1. Now that your Node-RED app is created, deploy it to IBM Cloud by clicking on Deploy your app on bottom left
+  <img src="./images/deploy-cf.png"/>
+
+1. Create the API key for this app by clicking on New +.
+  <img src="./images/apikey.png"/>
+
+1. Click Ok, Click Create and wait for few minutes until the Node-RED app is deployed to IBM Cloud. Check the deployment status by clicking on **No stages detected**.
+
+  <img src="./images/clickonstage.png"/>
+
+1. You will see two stages of your deployment – Build and Deploy. First the Build stage will run. Once Build is complete, it will show in stage PASSED and the Deploy stage will run
+
+  <img src="./images/2stages.png"/>
+
+1. When both stages are in status PASSED, your application is ready
+
+  <img src="./images/passed.png"/>
+
+1. In your browser, go back to previous window which shows your app and open your Cloud dashboard by clicking on IBM Cloud in the menu on top and in the Resource summary pane, click on Apps:
+
+  <img src="./images/resources.png"/>
+
+1. Click on your Node-RED app
+
+1. Open your app by clicking on Visit App URL
+
+  <img src="./images/appurl.png"/>
+
+1. The welcome screen of your Node-RED app opens, click Next
+
+  <img src="./images/node-red-start.png"/>
+
+1. Click Next for each step of the service installation. When prompted for securing your editor, do secure it. Securing the editor is a good practice, but this is **very important** that you:
+  - Remember you username/password and share it with your team
+  - Allow the option "Allow anyone to view the editor, but not make any changes"
+
+  <img src="./images/accessnodered.png"/>
+
+1. Click Next and Finish.
+
+1. Your app is installed, start working with the app by clicking on the red button: **Go to your Node-Red flow editor**
+
+Your Node-RED code editor is ready !
 
 
 
-In this part, we focus on applications which make use of IBM Watson Visual Recognition capabilities.
+### Step 4 - Building your app using Visual Recognition and Cloudant DB with Node-RED
 
-Nodes are blocks that represent components of a larger system, in Node-RED's case usually the devices, software platforms and web services that are to be connected. Further blocks can be placed in between these components to represent software functions that wrangle and transform the data in transit.
-
-**Deploy Node-RED on IBM Cloud**
-
-1. Go back to the IBM Cloud console and go to the Catalog. Click on tab Software on the left. Search for 'Node-RED'.
-
-2. Select "Node-RED Starter" to create it. Enter an app name, which must be unique i.e. VisualRecognitionWS-[your_lastname]. Choose Dallas as Region. Make sure one organization and one space are selected, it can be the default one. Click Create.
-
-  <img src="./images/node-red-creation.png"/>
-
-3. When your app is started, click on the "Visit app URL" link to launch your app:
-
-  <img src="./images/visit-app-url.png"/>
-
-4. Click Next, you can secure your app (which is a code editor) with a login/password, this is recommended. Click Next, next, finish.
-
-5. Launch Node-RED by clicking on the "Go to your Node-RED editor" button. Login if needed.
 
 **Create a simple flow with Visual Recognition**
 
