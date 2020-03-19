@@ -30,16 +30,22 @@ In the following lab, you will learn:
 
 A Pizza Fast Food wants to provide to their customers a unique and specific online service.
 As a developer, you are asked to create a "pizza checker app" so when the customer receives a pizza delivered at home and if while opening the pizza box he is not satisfied by the pizza condition, he can use this app in order to assess the problem using a visual recognition technology and report the problem to the Pizza Fast Food.
-In order to do that you will need to create a Visual Recognition service. Then you will create and train a custom visual recognition model to recognise bad/good condition pizzas. You will create a web application with a front end that will call the visual recognition service when the user upload a picture and that will store the result in a database.
+In order to do that you will need to create a Visual Recognition service. Then you will create and train a custom visual recognition model to recognise bad/good condition pizzas.
+
+Your finale objective is to create a web application with a front end that will call your custom visual recognition model when the user upload a picture and that will display the result and store it in a database.
+
+What we expect from you to realize:
+
+ <img src="./images/architecture.png"/>
 
 ## Steps
 
-1. Using Visual Recognition pre-trained models with the UI
-2. Creating a custom classifier with the UI
+1. Testing Visual Recognition pre-trained models with the UI
+2. Creating a Visual Recognition custom classifier
 3. Creating a Node-RED application
 4. Integrate Visual Recognition and Cloudant DB in your Node-RED application
 
-### Step 1 - Using Visual Recognition pre-trained models with the UI
+### Step 1 - Testing Visual Recognition pre-trained models with the UI
 
 The first part of this lab will show you how to create a Visual Recognition Service, and use its tooling to test Watson provided models.
 
@@ -63,22 +69,24 @@ Watson Studio is the tool for building AI models in a collaborative fashion so y
 7. Create an **empty project**.
    <img src="./images/empty-project.png"/>
 
-8. Enter a name for your project (e.g. My Pizza Quality Check) and a description if you like then click the **Create** button. This project will create the needed Cloud Object Storage.
+8. Enter a name for your project (e.g. My Pizza Quality Check) and a description if you like then click the **Create** button. **This project will create the needed Cloud Object Storage** in order to stare any data related to your project.
    <img src="./images/pizza-check2.png"/>
-9. On the top right, click on **+ Add to project**   
+
+9. Once your project is created, on the top right, click on **+ Add to project**   
    <img src="./images/add-project.png"/>
 
    And select **Visual Recognition** as asset type.
 10. You need to provision a Visual Recognition service, click on the link to do it.
    <img src="./images/link-vr.png"/>
 
-   Create the service and make sure to chose the **DALLAS region**
+
+   Create the **new** service and make sure to chose the **DALLAS region**
 
    <img src="./images/confirm-creation.png"/>
 
    Great! You have created a new machine learning project that you can collaborate on with others, upload data-sets, and create training models. Additionally, this project wizard has instantiated the Watson Visual Recognition service that is pre-trained on millions of consumer oriented images and can be used with no additional training (as we'll see below).
 
-   However, since consumer data represents only 20% of the world's data, we will create a custom model below to teach Watson your business and what insights are in your images that consumer trained visual recognition software just doesn't cover.
+   However we will create a custom model below to teach Watson what insights are in your images that pre-trained visual recognition software just doesn't cover.
 
 **Test the General model:**
 
@@ -101,7 +109,7 @@ Yet still, these millions of photos are a drop in the bucket compared to how man
 
 Therefore, let's examine how easy it is to teach Watson something that consumer oriented AI doesn't do.
 
-### Step 2 - Creating a custom classifier with the UI
+### Step 2 - Creating a Visual Recognition custom classifier
 
 Objectives : Teaching Watson New Tricks
 
@@ -122,8 +130,8 @@ Click the Browse button to upload a zip file containing at least 10 photos (.jpg
 
   <img src="./images/upload-images.png"/>
 
-5. Rename the 2 classes created automatically : GoodConditionPizza and BadConditionPizza
-6. Then open the Negative class. Browse and drag and drop the "not_pizza_images.zip" data set from the right of the screen to the class. Upon completion you will see image thumbnails for the class displayed in the tile.
+5. Rename the 2 classes created automatically : **GoodConditionPizza** and **BadConditionPizza**
+6. Then open the **Negative** class. Browse and drag and drop the "not_pizza_images.zip" data set from the right of the screen to the class. Upon completion you will see image thumbnails for the class displayed in the tile.
 
 
 7. Your model is ready to train, you can now click on the "Train Model" button and for your model to be trained. Even though it might seem like Watson is taking a long time, Watson set a world record for the fastest training of 7.5 million images in 7 hours versus the previous record taking 10 days (i.e. 34 times faster): http://fortune.com/2017/08/08/ibm-deep-learning-breakthrough/
@@ -143,66 +151,29 @@ Now that Watson has been trained on your specific images, let's test it out usin
 
     <img src="./images/images-test-custom.png"/>
 
-### Step 3 - Creating an object detection model
-
-Up until now, clients have been using Watson to understand the contents of their images by training Watson with tagged images. For instance, detecting whether a car does or does not have damage.
-
-Today, our Custom Object Detection feature allows clients to train Watson by labeling specific objects, and training Watson to identify those objects in other images as well. For instance, clients can train Watson to determine the type of vehicle damage inside an image, including the location of the damage and the relative size of the damage. This results in more refined accuracy of the data overall, which helps to predict future outcomes, including estimated cost of repair from the vehicle damage.
-
-The use cases expand beyond car damage to:
-
-- Counting vehicles in a traffic jam
-- Identifying unattended shopping carts in a parking lot
-- Checking for patterns in CT or MRI scans
-- Locating specific objects on a store shelf
-- Detecting logos in images
-
-To make this work we use a deep convolutional neural network which has been pre-trained on millions of examples. Transfer learning and data augmentation make it possible to train a great model without spending countless hours annotating thousands of training images.
-
-1. Back to your available model list, clcik on **Create Model** on the Detect Objects tile.
-
-   <img src="./images/detect-object-tile.png"/>
-
-2. Rename the collection "Pikachu-collection"
-
-3. Drag and drop the **pikachu-collection** from <a href="https://github.com/cllebrun/cllebrun.github.io/tree/master/labs/3.2%20Lab%20Watson%20-%20Watson%20Visual%20Recognition/Step3%20-%20Collection.zip" download="step3-collection.zip">step3-collection</a> folder (You can download and extract the zip file on your laptop).
-
-4. Select an image and draw a box around Pikachu objects. Add the "pikachu" label. A "otherpokemon" label when it is a pokemon but not a pikachu. Save, and repeat until you’re ready for the next image!
-      <img src="./images/train-collection.png"/>
-      <img src="./images/2lables.png"/>
-
-5. Click Done. Click to **View all images**
-
-6. Once you’ve labeled several images you can train and test your machine learning model. Click on the **Train Model** button.
-    <img src="./images/train-model.png"/>
-
-7. Once the training is done, you can test new images. Click on the "Pikachu-collection" link and on the **Test** tab.
-      <img src="./images/test-tab.png"/>
-
-8. Drag and drop the test images from <a href="https://github.com/cllebrun/cllebrun.github.io/tree/master/labs/3.2%20Lab%20Watson%20-%20Watson%20Visual%20Recognition/Step3%20-%20Test%20Images.zip" download="step3-test-images.zip">step3-test-images</a> folder (You can download and extract the zip file on your laptop).
-  <img src="./images/results-test.png"/>
-
-
-At this point, you may have more images to label to improve your model’s accuracy, this is where the Auto Label feature will help you label data to train faster. If you wanted to do that, simply go to an image without labels, and click Auto Label to get Watson’s suggested labels.
-
-Get started with Custom Object Detection to enhance your existing applications to more efficiently and effectively analyze visual content to drive productivity inside your organization.
-
-### Step 4 - Integrate Visual Recognition in your application with Node-Red
-
-**Introduction**
+### Step 3 - Creating a Node-RED application
 
 Node-RED is a visual tool for wiring the Internet of Things. It is easy to connect devices, data and api’s (services). It can also be used for other types of applications to quickly assemble flows of services. Node-RED is available as open source and has been implemented by the IBM Emerging Technology organization. Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide range of nodes in the palette. Flows can be then deployed to the runtime in a single-click. While Node-Red is based on Node.js, JavaScript functions can be created within the editor using a rich text editor. A built-in library allows you to save useful functions, templates or flows for re-use.
 
-Node-RED is included in the Node-RED starter application in IBM Cloud (IBM Cloud is IBM’s Platform as a Service, free of charge) but you can also deploy it as a stand alone Node.js application. Node-RED can not only be used for IoT applications, but it is a generic event-processing engine. For example, you can use it to listen to events from http, websockets, tcp, Twitter (and more!) and store this data in databases without having to program much, if at all. You can also use it to implement simple REST APIs. You can find many other sample flows on the Node-RED website.
+A cloud version of Node-RED is a available on IBM Cloud but you can also deploy it as a stand alone Node.js application. Node-RED can not only be used for IoT applications, but it is a generic event-processing engine. For example, you can use it to listen to events from http, websockets, tcp, Twitter (and more!) and store this data in databases without having to program much, if at all. You can also use it to implement simple REST APIs. You can find many other sample flows on the Node-RED website.
 
-In this labs, we focus on applications which make use of IBM Watson Visual Recognition capabilities.
+1. Back on n your IBM Cloud console, click Catalog in the menu bar on top
+
+1. Select the Software tab, an look for **Node-RED st
+
+### Step 4 - Integrate Visual Recognition and Cloudant DB in your Node-RED application
+
+**Introduction**
+
+
+
+In this part, we focus on applications which make use of IBM Watson Visual Recognition capabilities.
 
 Nodes are blocks that represent components of a larger system, in Node-RED's case usually the devices, software platforms and web services that are to be connected. Further blocks can be placed in between these components to represent software functions that wrangle and transform the data in transit.
 
 **Deploy Node-RED on IBM Cloud**
 
-1. Go back to the IBM Cloud console and go to the Catalog. Search for 'Node-RED', which can be found under Starter Kits:
-  <img src="./images/node-red-catalog.png"/>
+1. Go back to the IBM Cloud console and go to the Catalog. Click on tab Software on the left. Search for 'Node-RED'.
 
 2. Select "Node-RED Starter" to create it. Enter an app name, which must be unique i.e. VisualRecognitionWS-[your_lastname]. Choose Dallas as Region. Make sure one organization and one space are selected, it can be the default one. Click Create.
 
