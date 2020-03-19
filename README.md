@@ -222,7 +222,7 @@ Your Node-RED code editor is ready !
 ### Step 4 - Building your app using Visual Recognition and Cloudant DB with Node-RED
 
 
-**Create a simple flow with Visual Recognition**
+**How to create a simple flow with Visual Recognition**
 
 6. Drag and drop the nodes **Inject**, **visual recognition** and **debug** on your Node-RED workspace. Wire them together.
 
@@ -231,21 +231,21 @@ Your Node-RED code editor is ready !
 
 7. You need to configure the **visual recognition** node. Double click on it to open it, you need an **API Key** and to select the right **endpoint url**.
 
-You can find these credentials from Visual Recognition Service created in Step 1:
+How can you can find these credentials from Visual Recognition Service created in Step 1?
 
 - go to https://dataplatform.ibm.com/data/services?target=watson
 - click on your visual recognition instance
-- click on Credentials tab and View credentials
-- copy the apikey value
+- click on Credentials tab and View credentials or Create new credentials
+- copy the apikey and url values
 
 
-8. In Node-RED, paste the API Key value in the API Key field in your node.
+8. In Node-RED, paste the API Key value in the API Key field in your node. Same for the url endpoint.
 
-9. Select https://gateway.watsonplatform.net/visual-recognition/api from the dropdown next to Service Endpoint. Click Done.
+9. Click Done.
 
   <img src="./images/nodered2.png"/>
 
-10. Open the **Inject** node and give an image URL as a string input: https://watson-visual-recognition-duo-dev.ng.bluemix.net/images/classify/small/computer_chip.jpg
+10. Open the **Inject** node and give any image URL as a string input to test your flow.
 Click Done.
 
   <img src="./images/nodered3.png"/>
@@ -275,7 +275,7 @@ Click Done.
 
     <img src="./images/nodered6.png"/>
 
-**Create a flow using your custom model**
+**How to create a flow using your custom model**
 
 In this part, we will discover how to set the parameters of the Visual Recognition node
 
@@ -300,9 +300,9 @@ We will use the **Change** node to define some part of the msg object that will 
 
 17. Configure the **visual recognition** node and the **debug** node the same way than for the Flow1.
 
-18. With the change node, set msg.params["classifier_ids"] to your own classifier id (copied from Watson Studio):
+18. With the change node, set msg.params["classifier_ids"] to your own classifier id (copied from Watson Studio): **copy classifier id**
 
- <img src="./images/classifier_id.png"/>
+ <img src="./images/copy-classifier-id.png"/>
 
   <img src="./images/nodered10.png"/>
 
@@ -318,18 +318,14 @@ We will use the **Change** node to define some part of the msg object that will 
 
   <img src="./images/nodered11.png"/>
 
-  ** Challenge: Create a flow with multiple Visual Recognition models**
 
-Usually, classification if a multistep process. First you use a generic classification model. If the generic classifier identify something of interest, then you can apply a specific classifier.
+You are now ready to create your app !
 
-In this step, you will have to create your own flow. This flow will first check if there is a pizza on the picture. If yes, it will check if the pizza is in good condition or not.
+What we expect from you is a web app with a ui for example like:
+  <img src="./images/ui-result.png"/>
 
-Before starting, it is better to click on + near the info tab, to create a new page, and start in Flow 3 empty canvas.
+Of course you can customize as much as you want
 
-Hint :
-- You probably need to use a function node to evaluate the result of the generic classifier.
-- You need to use the **generic** model first and then your custom one!
-
-Here is a sample of code configuration for such a node :
-
-  <img src="./images/nodered12.png"/>
+In Node-RED you can import the starter code (menu -> import -> clipboard)
+as a json object:
+https://github.com/cllebrun/Node-RED-Pizza/blob/master/startercode-nodered.json
