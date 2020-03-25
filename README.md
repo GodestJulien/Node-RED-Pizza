@@ -345,7 +345,7 @@ and/or
 Your job now is to plan and organise new features improvement to develop on the app.
 What is the future development effort ?
 What can you already implement today?
-How do you organise?
+How do you organise using AGILE methodology?
 
 We expect form you at the end of the day to provide a version 2 of the starter app and also to describe the future improvements you did not had the time to implement today.
 
