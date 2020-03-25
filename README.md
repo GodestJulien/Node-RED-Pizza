@@ -46,10 +46,10 @@ What we expect from you to achieve today:
 ## Steps
 
 1. [Testing Visual Recognition pre-trained models with the UI](#step-1---testing-visual-recognition-pre-trained-models-with-the-ui)
-2. [Creating a Visual Recognition custom classifier](#step-2---Creating-a-Visual-Recognition-custom-classifier)
-3. [Creating a Node-RED application](#step-3---Creating-a-Node-RED-application)
-4. [Building your app using Visual Recognition](#step-4---Building-your-app-using-Visual-Recognition)
-5. [Free creative part](#step-5---Free-creative-part)
+2. [Creating a Visual Recognition custom classifier](#step-2---creating-a-visual-recognition-custom-classifier)
+3. [Creating a Node-RED application](#step-3---creating-a-node-red-application)
+4. [Building your app using Visual Recognition](#step-4---building-your-app-using-visual-recognition)
+5. [Free creative part](#step-5---free-creative-part)
 
 # Step 1 - Testing Visual Recognition pre trained models with the UI
 
