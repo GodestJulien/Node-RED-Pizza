@@ -46,12 +46,12 @@ What we expect from you to achieve today:
 ## Steps
 
 1. [Testing Visual Recognition pre-trained models with the UI](#step-1---testing-visual-recognition-pre-trained-models-with-the-ui)
-2. Creating a Visual Recognition custom classifier
-3. Creating a Node-RED application
-4. Building your app using Visual Recognition and Cloudant DB with Node-RED
-5. Free creative part
+2. [Creating a Visual Recognition custom classifier](#step-2---Creating-a-Visual-Recognition-custom-classifier)
+3. [Creating a Node-RED application](#step-3---Creating-a-Node-RED-application)
+4. [Building your app using Visual Recognition](#step-4---Building-your-app-using-Visual-Recognition)
+5. [Free creative part](#step-5---Free-creative-part)
 
-### Step 1 - Testing Visual Recognition pre trained models with the UI
+# Step 1 - Testing Visual Recognition pre trained models with the UI
 
 The first part of this lab will show you how to create a Visual Recognition Service, and use its tooling to test Watson provided models.
 
@@ -115,7 +115,7 @@ Yet still, these millions of photos are a drop in the bucket compared to how man
 
 Therefore, let's examine how easy it is to teach Watson something that consumer oriented AI doesn't do.
 
-### Step 2 - Creating a Visual Recognition custom classifier
+# Step 2 - Creating a Visual Recognition custom classifier
 
 Objective : Teaching Watson New Tricks
 
@@ -157,7 +157,7 @@ Now that Watson has been trained on your specific images, let's test it out usin
 
     <img src="./images/images-test-custom.png"/>
 
-### Step 3 - Creating a Node-RED application
+# Step 3 - Creating a Node-RED application
 
 Node-RED is a visual tool for wiring the Internet of Things. It is easy to connect devices, data and api’s (services). It can also be used for other types of applications to quickly assemble flows of services. Node-RED is available as open source and has been implemented by the IBM Emerging Technology organization. Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide range of nodes in the palette. Flows can be then deployed to the runtime in a single-click. While Node-Red is based on Node.js, JavaScript functions can be created within the editor using a rich text editor. A built-in library allows you to save useful functions, templates or flows for re-use.
 
@@ -222,7 +222,7 @@ Your Node-RED code editor is ready !
 
 
 
-### Step 4 - Building your app using Visual Recognition and Cloudant DB with Node-RED
+# Step 4 - Building your app using Visual Recognition
 
 
 **How to create a simple flow with Visual Recognition**
@@ -334,7 +334,7 @@ as a json object:
 https://github.com/cllebrun/Node-RED-Pizza/blob/master/startercode-nodered.json
 
 
-### Step 5 - Free creative part
+# Step 5 - Free creative part
 
 **What we expect form you now:**
 
