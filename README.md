@@ -236,7 +236,7 @@ Your Node-RED code editor is ready !
 
 How can you can find these credentials from Visual Recognition Service created in Step 1?
 
-- go to https://dataplatform.ibm.com/data/services?target=watson
+- go to <a href="https://dataplatform.ibm.com/data/services?target=watson">https://dataplatform.ibm.com/data/services?target=watson</a>
 - click on your visual recognition instance
 - click on Credentials tab and View credentials or Create new credentials
 - copy the apikey and url values
