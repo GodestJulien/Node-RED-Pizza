@@ -248,7 +248,8 @@ How can you can find these credentials from Visual Recognition Service created i
 
   <img src="./images/nodered2.png"/>
 
-10. Open the **Inject** node and give any image URL as a string input to test your flow.
+10. Open the **Inject** node and give any image URL as a string input to test your flow. For example : https://watson-visual-recognition-duo-dev.ng.bluemix.net/images/classify/small/computer_chip.jpg
+
 Click Done.
 
   <img src="./images/nodered3.png"/>
@@ -310,10 +311,10 @@ We will use the **Change** node to define some part of the msg object that will 
   <img src="./images/nodered10.png"/>
 
 19. Click Done.
-20. In the **inject** node, add a "Good Pizza" url : http://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg (change the name of the node for better understanding of the flow)
+20. In the **inject** node, add a "Good Pizza" url : <a href="http://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg">http://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg</a> (change the name of the node for better understanding of the flow)
 
   <img src="./images/good_pizza.jpg"/>
-21. Add another **inject** node, add a "Bad Pizza" url : http://aws-cf.imdoc.fr/prod/photos/3/8/1/10732381/23441387/img-23441387c2a.jpg (change the name of the node for better understanding of the flow)
+21. Add another **inject** node, add a "Bad Pizza" url : <a href="http://aws-cf.imdoc.fr/prod/photos/3/8/1/10732381/23441387/img-23441387c2a.jpg">http://aws-cf.imdoc.fr/prod/photos/3/8/1/10732381/23441387/img-23441387c2a.jpg</a> (change the name of the node for better understanding of the flow)
 
   <img src="./images/badpizza.jpg"/>
 
@@ -350,7 +351,7 @@ How do you organise using AGILE methodology?
 We expect form you at the end of the day to provide a version 2 of the starter app and also to describe the future improvements you did not had the time to implement today.
 
 
-For that, you can use HTML etc in the templates nodes, use new nodes, uses example of open sources flows as an inspiration: https://flows.nodered.org/
+For that, you can use HTML etc in the templates nodes, use new nodes, uses example of open sources flows as an inspiration: <a href="https://flows.nodered.org/">https://flows.nodered.org/</a>
 
 **Tips for Node-RED usage:**
 - Use the "Info tab" for each node, when you select it in Node-RED to better understand input/output and parameters:
@@ -358,6 +359,6 @@ For that, you can use HTML etc in the templates nodes, use new nodes, uses examp
   <img src="./images/info-tab.png"/>
 
 
-- To import new libraries of nodes that you can find on https://www.npmjs.com
+- To import new libraries of nodes that you can find on <a href="https://www.npmjs.com">https://www.npmjs.com</a>
 In your Node-RED app go to Menu -> Manage Palette -> Onglet "Install"
   <img src="./images/manage-palette.png"/>
