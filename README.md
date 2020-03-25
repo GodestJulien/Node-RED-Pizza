@@ -45,13 +45,13 @@ What we expect from you to achieve today:
 
 ## Steps
 
-1. Testing Visual Recognition pre-trained models with the UI
+1. [Testing Visual Recognition pre-trained models with the UI](#step-1---testing-visual-recognition-pre-trained-models-with-the-ui)
 2. Creating a Visual Recognition custom classifier
 3. Creating a Node-RED application
 4. Building your app using Visual Recognition and Cloudant DB with Node-RED
 5. Free creative part
 
-### Step 1 - Testing Visual Recognition pre-trained models with the UI
+### Step 1 - Testing Visual Recognition pre trained models with the UI
 
 The first part of this lab will show you how to create a Visual Recognition Service, and use its tooling to test Watson provided models.
 
