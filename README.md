@@ -2,7 +2,7 @@
 
 # Node-RED Challenge - Watson Visual Recognition - Pizza App
 
-This exercise is divided in 4 steps, please note that Step 1&2 are independent than Steps 3&4 but an integration is needed at the end.
+This exercise is divided in 4 steps, please note that Step 1&2 are independent than Steps 3&4 and 5 but an integration is needed at the end.
 
 ## A few words about Watson Visual Recognition technology
 Watson Visual Recognition understands an image’s content out-of-the-box. The pre-trained models enable you to analyze images for objects, faces, colors, food, explicit content and other subjects for insights into your visual content.
@@ -49,6 +49,7 @@ What we expect from you to achieve today:
 2. Creating a Visual Recognition custom classifier
 3. Creating a Node-RED application
 4. Building your app using Visual Recognition and Cloudant DB with Node-RED
+5. Free creative part
 
 ### Step 1 - Testing Visual Recognition pre-trained models with the UI
 
@@ -332,14 +333,26 @@ In Node-RED you can import the starter code (menu -> import -> clipboard)
 as a json object:
 https://github.com/cllebrun/Node-RED-Pizza/blob/master/startercode-nodered.json
 
+
+### Step 5 - Free creative part
+
 **What we expect form you now:**
 
 - improve the UI
+and/or
 - add new features
+
+Your job now is to plan and organise new features improvement to develop on the app.
+What is the future development effort ?
+What can you already implement today?
+How do you organise?
+
+We expect form you at the end of the day to provide a version 2 of the starter app and also to describe the future improvements you did not had the time to implement today.
+
 
 For that, you can use HTML etc in the templates nodes, use new nodes, uses example of open sources flows as an inspiration: https://flows.nodered.org/
 
-**Tips:**
+**Tips for Node-RED usage:**
 - Use the "Info tab" for each node, when you select it in Node-RED to better understand input/output and parameters:
 
   <img src="./images/info-tab.png"/>
