@@ -22,6 +22,7 @@ In the following lab, you will learn:
 + How to use the Watson Visual Recognition API
 + How to use the Watson Studio tools to create your own custom model
 + How to integrate the visual recognition technology in a web app application
++ Work on your creativity and project management skills
 
 
 ## Pre-Requisites
@@ -35,11 +36,12 @@ A Pizza Fast Food wants to provide to their customers a unique and specific onli
 As a developer, you are asked to create a "pizza checker app" so when the customer receives a pizza delivered at home and if while opening the pizza box he is not satisfied by the pizza condition, he can use this app in order to assess the problem using a visual recognition technology and report the problem to the Pizza Fast Food.
 In order to do that you will need to create a Visual Recognition service. Then you will create and train a custom visual recognition model to recognise bad/good condition pizzas.
 
-Your finale objective is to create a web application with a front end that will call your custom visual recognition model when the user upload a picture and that will display the result and store it in a database.
+1. Your finale objective is to create a web application with a front end that will call your custom visual recognition model when the user upload a picture.
+2. We also ask you to add new features/improvement of your choice to make this app unique.
 
 What we expect from you to achieve today:
 
- <img src="./images/architecture.png"/>
+ <img src="./images/architecture2.png"/>
 
 ## Steps
 
@@ -324,8 +326,25 @@ You are now ready to create your app !
 What we expect from you is a web app with a ui for example like:
   <img src="./images/ui-result.png"/>
 
-Of course you can customize as much as you want
+**We provide a starter code for you to help you with the integration parts**
 
 In Node-RED you can import the starter code (menu -> import -> clipboard)
 as a json object:
 https://github.com/cllebrun/Node-RED-Pizza/blob/master/startercode-nodered.json
+
+**What we expect form you now:**
+
+- improve the UI
+- add new features
+
+For that, you can use HTML etc in the templates nodes, use new nodes, uses example of open sources flows as an inspiration: https://flows.nodered.org/
+
+**Tips:**
+- Use the "Info tab" for each node, when you select it in Node-RED to better understand input/output and parameters:
+
+  <img src="./images/info-tab.png"/>
+
+
+- To import new libraries of nodes that you can find on https://www.npmjs.com
+In your Node-RED app go to Menu -> Manage Palette -> Onglet "Install"
+  <img src="./images/manage-palette.png"/>
